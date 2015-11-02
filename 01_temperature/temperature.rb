@@ -1,13 +1,5 @@
 def ftoc(temp)
-	if temp == 32
-		0
-	elsif temp == 212
-		100
-	elsif temp == 98.6
-		37
-	else
-		20
-	end
+		(temp - 32.0)*(5.0/9.0)
 end
 
 def ctof(temp)
