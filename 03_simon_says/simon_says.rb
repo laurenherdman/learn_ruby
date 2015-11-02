@@ -3,52 +3,38 @@ def echo (input)
 end
 
 def shout (cap)
-	if cap == "hello"
-		"HELLO"
-	else
-		"HELLO WORLD"
-	end
+	cap.upcase
 end
 
-def repeat (string, num = 1)
-	if string == "hello" && num == 3
-		"hello hello hello"
-	else
-		"hello hello"
+def repeat (string, num = 2)
+	output = []
+	while num > 0
+		output.push(string)
+		num -= 1
 	end
+	output.join(' ')
 end
 
 def start_of_word(word, number)
-	s = "abcdefg"
-	if word == "hello" && number == 1
-		"h"
-	elsif word == "Bob" && number == 2
-		"Bo"
-	elsif word == s && number == 1
-		"a"
-	elsif word == s && number == 2
-		"ab"
-	else
-		"abc"
-	end
+	word[0..number-1]
 end
 
 def first_word(some_words)
-	if some_words == "Hello World"
-		"Hello"
-	else
-		"oh"
-	end
+	first_word = some_words.split(' ')
+	first_word[0]
 end
 
 def titleize (title)
-	if title == "jaws"
-		"Jaws"
-	elsif title == "david copperfield"
-		"David Copperfield"
-	elsif title == "war and peace"
-		"War and Peace"
-	else
-		"The Bridge over the River Kwai"
+	lowercase = ["and", "over", "the"]
+	string_array = []
+	title.split.map do |word|
+		if lowercase.include?(word)
+			string_array.push(word)
+		else
+			string_array.push(word.capitalize)
+		end
 	end
+		output = string_array.join (' ')
+		output[0] = output[0].upcase
+		output
 end
